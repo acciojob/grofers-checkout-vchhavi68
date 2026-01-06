@@ -1,13 +1,16 @@
-const button = document.querySelector("button");
-
-button.addEventListener("click", () => {
-  const prices = document.querySelectorAll(".prices");
+const prices = document.querySelectorAll(".prices");
   let total = 0;
 
   prices.forEach(price => {
-    total += Number(price.textContent);
+    total += Number(price.innerText);
   });
 
-  document.getElementById("ans").textContent = total;
-});
+  const table = document.getElementById("groceryTable");
+  const row = document.createElement("tr");
+  const cell = document.createElement("td");
 
+  cell.colSpan = 2;
+  cell.innerText = "Total Price: " + total;
+
+  row.appendChild(cell);
+  table.appendChild(row);
