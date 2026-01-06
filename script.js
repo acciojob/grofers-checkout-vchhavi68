@@ -2,15 +2,12 @@ const button = document.querySelector("button");
 
 button.addEventListener("click", () => {
   const prices = document.querySelectorAll(".prices");
-  let sum = 0;
+  let total = 0;
 
   prices.forEach(price => {
-    sum += Number(price.textContent);
+    total += Number(price.textContent);
   });
 
-  document.getElementById("ans").textContent = sum;
+  document.getElementById("ans").textContent = total;
 });
 
-
-// Button click event
-getSumBtn.addEventListener("click", getSum);
